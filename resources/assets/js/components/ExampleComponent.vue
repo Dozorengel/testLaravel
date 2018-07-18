@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" v-heatmap="show">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card card-default">
@@ -11,6 +11,7 @@
                 </div>
             </div>
         </div>
+        <button @click="show = !show">Toggle Heatmap</button>
     </div>
 </template>
 
@@ -18,6 +19,11 @@
     export default {
         mounted() {
             console.log('Component mounted.')
+        },
+        data() {
+            return {
+                show: false,
+            }
         }
     }
 </script>
