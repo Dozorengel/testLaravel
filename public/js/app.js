@@ -38991,7 +38991,9 @@ window.Vue = __webpack_require__(60);
 // require('vue-heatmapjs');
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_heatmapjs__["a" /* default */], {
-  heatmapPreload: [{ x: 100, y: 10, value: 100 }]
+  heatmapPreload: fetch('http://localhost:8000/api/index').then(function (response) {
+    return response.json();
+  })
 });
 
 /**

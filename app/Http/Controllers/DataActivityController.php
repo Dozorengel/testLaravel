@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DataActivity;
+use App\Http\Resources\DataCollection;
 use Illuminate\Http\Request;
 
 class DataActivityController extends Controller
@@ -14,8 +15,7 @@ class DataActivityController extends Controller
      */
     public function index()
     {
-        $data = DataActivity::all();
-        return response()->json($data);
+        return new DataCollection(DataActivity::all());
     }
 
     /**
@@ -36,11 +36,7 @@ class DataActivityController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new DataActivity();
-        $data->x=$request->get('x');
-        $data->y=$request->get('y');
-        $data->ts=$request->get('ts');
-
+        $data = new DataActivity($request->all());
         $data->save();
         return response()->json('Successfully added');
     }

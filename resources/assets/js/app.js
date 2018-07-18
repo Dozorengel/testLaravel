@@ -14,7 +14,7 @@ window.Vue = require('vue');
 // require('vue-heatmapjs');
 
 Vue.use(heatmap, {
-    heatmapPreload: [{ x: 100, y: 10, value: 100 }],
+    heatmapPreload: fetch('http://localhost:8000/api/index').then(response => response.json()),
 });
 
 /**
