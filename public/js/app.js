@@ -38972,12 +38972,9 @@ module.exports = __webpack_require__(496);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pauser", function() { return pauser; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_heatmapjs__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -38986,31 +38983,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  */
 
 
-
 __webpack_require__(469);
 
 window.Vue = __webpack_require__(60);
-// import Vue from 'vue'
-// import heatmap from 'vue-heatmapjs'
-// require('vue-heatmapjs');
-// const stream = new Subject();
-var pauser = new __WEBPACK_IMPORTED_MODULE_2_rxjs_Subject__["Subject"]();
 
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.config.productionTip = false;
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_heatmapjs__["a" /* default */], {
-    /* stream,
-     heatmapPreload: fetch('http://localhost:8000/api/index').then(response => response.json()).then(text => {
-         console.log(text);
-     })*/
-    // heatmapPreload: [{ x: 10, y: 100, value: 100 },{ x: 100, y: 200, value: 100 }],
-    heatmapPreload: fetch('http://localhost:8000/api/index').then(function (response) {
-        return response.json();
-    }),
-    pauser: pauser
+  heatmapPreload: fetch('http://localhost:8000/api/index').then(function (response) {
+    return response.json();
+  })
 });
-pauser.next(true);
-console.log(pauser);
-// stream.subscribe(console.log);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -39020,13 +39003,7 @@ console.log(pauser);
 __WEBPACK_IMPORTED_MODULE_0_vue___default.a.component('example-component', __webpack_require__(492));
 
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
-    el: '#app',
-    methods: {
-        move: function move($event) {
-            $event.stopPropagation();
-            console.log($event);
-        }
-    }
+  el: '#app'
 });
 
 /***/ }),
