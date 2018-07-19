@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use PhpParser\Builder\Class_;
 
 class HomeController extends Controller
 {

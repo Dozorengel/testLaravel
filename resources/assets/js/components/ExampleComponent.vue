@@ -1,19 +1,15 @@
 <template>
-    <div class="container" v-heatmap="show">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card card-default">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button @click="show = !show">Toggle Heatmap</button>
-    </div>
+    <div id="vue" v-heatmap="show"></div>
 </template>
+
+<style>
+    #vue {
+        pointer-events: none;
+        height: 1000px;
+        background-image: url('/img/screencapture.png');
+        background-repeat: no-repeat
+    }
+</style>
 
 <script>
     export default {
@@ -22,7 +18,7 @@
         },
         data() {
             return {
-                show: false,
+                show: true
             }
         }
     }
